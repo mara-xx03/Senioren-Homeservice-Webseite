@@ -1,6 +1,7 @@
 'use server'
 
 import { getPayloadClient } from '@/lib/payload'
+import { sendMail } from '@/lib/send-mail'
 
 type ConsultationInput = {
   customerName: string
@@ -14,9 +15,87 @@ type ConsultationInput = {
   authorizedRepresentative: boolean
 }
 
+export type MailLinks = {
+  mailto: string
+  gmail: string
+  outlook: string
+}
+
 export type ConsultationResult =
-  | { success: true }
+  | { success: true; mailSent: boolean; mailLinks: MailLinks }
   | { success: false; error: string }
+
+const CONTACT_EMAIL = 'senioren-homeservice@gmx.ch'
+const CONTACT_CC_EMAIL = 'mode-homeservice@gmx.ch'
+
+const topicLabels: Record<string, string> = {
+  personal: 'Persönliche Modeberatung',
+  product: 'Frage zu einem Produkt',
+  'home-service': 'Mobiler Homeservice',
+  institution: 'Verkaufstag – Anfrage einer Heimleitung',
+  other: 'Andere Frage',
+}
+
+const roleLabels: Record<string, string> = {
+  management: 'Heimleitung / Geschäftsleitung',
+  'care-management': 'Pflegedienstleitung',
+  administration: 'Einkauf / Verwaltung',
+  'authorized-representative': 'Andere autorisierte Vertretung',
+}
+
+function buildMailContent(fields: {
+  customerName: string
+  phone: string
+  email: string
+  preferredContact: 'phone' | 'email'
+  topic: string
+  message: string
+  institutionName: string
+  institutionRole?: string
+}) {
+  const subject = `Anfrage von ${fields.customerName} – ${topicLabels[fields.topic] ?? 'Anfrage'}`
+
+  const lines = [
+    `Name: ${fields.customerName}`,
+    `Telefon: ${fields.phone}`,
+    `E-Mail: ${fields.email || '–'}`,
+    `Gewünschter Kontaktweg: ${fields.preferredContact === 'email' ? 'Per E-Mail' : 'Per Telefon'}`,
+    `Anliegen: ${topicLabels[fields.topic] ?? fields.topic}`,
+  ]
+
+  if (fields.institutionName) lines.push(`Heim: ${fields.institutionName}`)
+  if (fields.institutionRole) {
+    lines.push(`Funktion: ${roleLabels[fields.institutionRole] ?? fields.institutionRole}`)
+  }
+
+  lines.push('', 'Nachricht:', fields.message || '–')
+
+  return { subject, body: lines.join('\n') }
+}
+
+function buildMailLinks(subject: string, body: string): MailLinks {
+  // URLSearchParams kodiert Leerzeichen als "+", in mailto-Links muss es %20 sein.
+  const encode = (params: Record<string, string>) =>
+    new URLSearchParams(params).toString().replace(/\+/g, '%20')
+
+  return {
+    mailto: `mailto:${CONTACT_EMAIL}?${encode({ cc: CONTACT_CC_EMAIL, subject, body })}`,
+    gmail: `https://mail.google.com/mail/?${encode({
+      view: 'cm',
+      fs: '1',
+      to: CONTACT_EMAIL,
+      cc: CONTACT_CC_EMAIL,
+      su: subject,
+      body,
+    })}`,
+    outlook: `https://outlook.live.com/mail/0/deeplink/compose?${encode({
+      to: CONTACT_EMAIL,
+      cc: CONTACT_CC_EMAIL,
+      subject,
+      body,
+    })}`,
+  }
+}
 
 function cleanRequired(value: unknown, label: string, maxLength: number) {
   if (typeof value !== 'string') throw new Error(`${label} fehlt.`)
@@ -70,24 +149,45 @@ export async function submitConsultation(
     }
 
     const payload = await getPayloadClient()
-    await payload.create({
-      collection: 'consultation-requests',
-      data: {
-        customerName,
-        phone,
-        email: email || undefined,
-        preferredContact,
-        topic,
-        message,
-        institutionName: institutionName || undefined,
-        institutionRole,
-        authorizedRepresentative:
-          topic === 'institution' ? input.authorizedRepresentative === true : false,
-      },
-      overrideAccess: false,
+    if (payload) {
+      await payload.create({
+        collection: 'consultation-requests',
+        data: {
+          customerName,
+          phone,
+          email: email || undefined,
+          preferredContact,
+          topic,
+          message,
+          institutionName: institutionName || undefined,
+          institutionRole,
+          authorizedRepresentative:
+            topic === 'institution' ? input.authorizedRepresentative === true : false,
+        },
+        overrideAccess: false,
+      })
+    }
+
+    const { subject, body } = buildMailContent({
+      customerName,
+      phone,
+      email,
+      preferredContact,
+      topic,
+      message,
+      institutionName,
+      institutionRole,
     })
 
-    return { success: true }
+    const mailSent = await sendMail({
+      to: CONTACT_EMAIL,
+      cc: CONTACT_CC_EMAIL,
+      replyTo: email || undefined,
+      subject,
+      text: body,
+    })
+
+    return { success: true, mailSent, mailLinks: buildMailLinks(subject, body) }
   } catch (error) {
     return {
       success: false,

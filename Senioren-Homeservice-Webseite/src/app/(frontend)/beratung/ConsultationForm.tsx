@@ -1,11 +1,13 @@
 'use client'
 
 import { FormEvent, useState, useTransition } from 'react'
-import { submitConsultation } from './actions'
+import { submitConsultation, type MailLinks } from './actions'
 
 export default function ConsultationForm() {
   const [pending, startTransition] = useTransition()
   const [success, setSuccess] = useState(false)
+  const [mailSent, setMailSent] = useState(false)
+  const [mailLinks, setMailLinks] = useState<MailLinks | null>(null)
   const [error, setError] = useState('')
   const [topic, setTopic] = useState('personal')
 
@@ -31,6 +33,8 @@ export default function ConsultationForm() {
         setError(result.error)
         return
       }
+      setMailSent(result.mailSent)
+      setMailLinks(result.mailLinks)
       setSuccess(true)
     })
   }
@@ -41,16 +45,61 @@ export default function ConsultationForm() {
         <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#263e33] text-2xl text-white">
           ✓
         </span>
-        <h2 className="mt-6 font-serif text-4xl font-medium">Vielen Dank für Ihre Anfrage.</h2>
-        <p className="mx-auto mt-4 max-w-lg text-[#657069]">
-          Wir haben Ihre Nachricht erhalten und melden uns so bald wie möglich persönlich bei Ihnen.
-        </p>
-        <a
-          href="/"
-          className="mt-7 inline-flex min-h-12 items-center justify-center rounded-sm bg-[#9d3d46] px-6 font-semibold text-white"
-        >
-          Zurück zur Startseite
-        </a>
+        <h2 className="mt-6 font-serif text-4xl font-medium">
+          {mailSent ? 'Vielen Dank für Ihre Anfrage.' : 'Fast geschafft – noch ein Klick.'}
+        </h2>
+
+        {mailSent ? (
+          <>
+            <p className="mx-auto mt-4 max-w-lg text-[#657069]">
+              Wir haben Ihre Nachricht erhalten und melden uns so bald wie möglich persönlich bei
+              Ihnen.
+            </p>
+            <a
+              href="/"
+              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-sm bg-[#9d3d46] px-6 font-semibold text-white"
+            >
+              Zurück zur Startseite
+            </a>
+          </>
+        ) : (
+          <>
+            <p className="mx-auto mt-4 max-w-lg text-[#657069]">
+              Ihre Anfrage ist vorbereitet. Bitte wählen Sie, womit Sie die E-Mail senden möchten –
+              die Nachricht ist bereits vollständig ausgefüllt.
+            </p>
+            <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href={mailLinks?.gmail}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-[#9d3d46] px-6 font-semibold text-white sm:w-auto"
+              >
+                Mit Gmail senden
+              </a>
+              <a
+                href={mailLinks?.outlook}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-[#263e33]/25 px-6 font-semibold text-[#263e33] sm:w-auto"
+              >
+                Mit Outlook senden
+              </a>
+              <a
+                href={mailLinks?.mailto}
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-[#263e33]/25 px-6 font-semibold text-[#263e33] sm:w-auto"
+              >
+                Mit meinem E-Mail-Programm
+              </a>
+            </div>
+            <p className="mt-5 text-sm text-[#69746e]">
+              Lieber telefonisch? Rufen Sie uns an:{' '}
+              <a href="tel:+41615541115" className="font-semibold text-[#9d3d46]">
+                061 554 11 15
+              </a>
+            </p>
+          </>
+        )}
       </div>
     )
   }
