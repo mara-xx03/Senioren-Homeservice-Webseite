@@ -7,6 +7,7 @@ export default function ConsultationForm() {
   const [pending, startTransition] = useTransition()
   const [success, setSuccess] = useState(false)
   const [mailSent, setMailSent] = useState(false)
+  const [mailHandedOff, setMailHandedOff] = useState(false)
   const [mailLinks, setMailLinks] = useState<MailLinks | null>(null)
   const [error, setError] = useState('')
   const [topic, setTopic] = useState('personal')
@@ -40,24 +41,37 @@ export default function ConsultationForm() {
   }
 
   if (success) {
+    const thankYou = mailSent || mailHandedOff
+
     return (
       <div className="border border-[#263e33]/15 bg-[#fffdf8] p-8 text-center sm:p-12">
         <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#263e33] text-2xl text-white">
           ✓
         </span>
         <h2 className="mt-6 font-serif text-4xl font-medium">
-          {mailSent ? 'Vielen Dank für Ihre Anfrage.' : 'Fast geschafft – noch ein Klick.'}
+          {thankYou ? 'Dankeschön für Ihre Anfrage.' : 'Fast geschafft – noch ein Klick.'}
         </h2>
 
-        {mailSent ? (
+        {thankYou ? (
           <>
             <p className="mx-auto mt-4 max-w-lg text-[#657069]">
-              Wir haben Ihre Nachricht erhalten und melden uns so bald wie möglich persönlich bei
-              Ihnen.
+              Wir melden uns so bald wie möglich persönlich bei Ihnen.
             </p>
+            <div className="mx-auto mt-7 max-w-lg border-t border-[#263e33]/15 pt-6">
+              <strong className="block font-serif text-2xl font-medium">Ungeduldig?</strong>
+              <p className="mt-2 text-[#657069]">
+                Rufen Sie uns doch gerne an – Montag bis Samstag zwischen 10.00 und 19.00 Uhr.
+              </p>
+              <a
+                href="tel:+41615541115"
+                className="mt-4 inline-flex min-h-12 items-center justify-center rounded-sm bg-[#9d3d46] px-6 font-serif text-2xl text-white"
+              >
+                061 554 11 15
+              </a>
+            </div>
             <a
               href="/"
-              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-sm bg-[#9d3d46] px-6 font-semibold text-white"
+              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-sm border border-[#263e33]/25 px-6 font-semibold text-[#263e33]"
             >
               Zurück zur Startseite
             </a>
@@ -73,6 +87,7 @@ export default function ConsultationForm() {
                 href={mailLinks?.gmail}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => setMailHandedOff(true)}
                 className="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-[#9d3d46] px-6 font-semibold text-white sm:w-auto"
               >
                 Mit Gmail senden
@@ -81,12 +96,14 @@ export default function ConsultationForm() {
                 href={mailLinks?.outlook}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => setMailHandedOff(true)}
                 className="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-[#263e33]/25 px-6 font-semibold text-[#263e33] sm:w-auto"
               >
                 Mit Outlook senden
               </a>
               <a
                 href={mailLinks?.mailto}
+                onClick={() => setMailHandedOff(true)}
                 className="inline-flex min-h-12 w-full items-center justify-center rounded-sm border border-[#263e33]/25 px-6 font-semibold text-[#263e33] sm:w-auto"
               >
                 Mit meinem E-Mail-Programm
@@ -96,7 +113,8 @@ export default function ConsultationForm() {
               Lieber telefonisch? Rufen Sie uns an:{' '}
               <a href="tel:+41615541115" className="font-semibold text-[#9d3d46]">
                 061 554 11 15
-              </a>
+              </a>{' '}
+              – Montag bis Samstag, 10.00–19.00 Uhr
             </p>
           </>
         )}
