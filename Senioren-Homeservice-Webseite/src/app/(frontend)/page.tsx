@@ -5,11 +5,9 @@ import { useState } from "react"
 
 const heroImage = "/images/senioren-modeberatung-hero.jpg"
 
-const coupleImage =
-  "https://images.unsplash.com/photo-1739932900241-4d3362b5ed8e?auto=format&fit=crop&w=1200&q=85"
+const coupleImage = "/images/ÜberUns.jpg"
 
-const fashionImage =
-  "https://images.unsplash.com/photo-1759765468070-120cdc180be8?auto=format&fit=crop&w=1000&q=85"
+const fashionImage = "/images/Kleider.jpg"
 
 function ArrowIcon() {
   return (
@@ -251,7 +249,7 @@ export default function App() {
               <div className="category-image">
                 <img
                   src={fashionImage}
-                  alt="Seniorin in einem eleganten, gemusterten Kleid"
+                  alt="Auswahl an Kleidern aus unserem Sortiment"
                 />
                 <div className="image-note">
                   <strong>Über 6’000</strong>
@@ -434,7 +432,7 @@ export default function App() {
             <div className="family-image">
               <img
                 src={coupleImage}
-                alt="Älteres Paar in gepflegter Kleidung"
+                alt="Das Team des Senioren Homeservice"
               />
               <span className="swiss-badge" aria-label="Schweizer Unternehmen">
                 <i />
