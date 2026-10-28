@@ -60,7 +60,8 @@ export default function ConsultationForm() {
             <div className="mx-auto mt-7 max-w-lg border-t border-[#263e33]/15 pt-6">
               <strong className="block font-serif text-2xl font-medium">Ungeduldig?</strong>
               <p className="mt-2 text-[#657069]">
-                Rufen Sie uns doch gerne an – Montag bis Samstag zwischen 10.00 und 19.00 Uhr.
+                Rufen Sie uns doch gerne an – telefonisch erreichbar Montag bis Samstag von 11.00
+                bis 19.00 Uhr.
               </p>
               <a
                 href="tel:+41788701050"
@@ -114,7 +115,7 @@ export default function ConsultationForm() {
               <a href="tel:+41788701050" className="font-semibold text-[#9d3d46]">
                 078 870 10 50
               </a>{' '}
-              – Montag bis Samstag, 10.00–19.00 Uhr
+              – telefonisch erreichbar Montag bis Samstag, 11.00–19.00 Uhr
             </p>
           </>
         )}

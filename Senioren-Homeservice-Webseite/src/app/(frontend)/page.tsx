@@ -5,7 +5,7 @@ import { useState } from "react"
 
 const heroImage = "/images/senioren-modeberatung-hero.jpg"
 
-const coupleImage = "/images/ÜberUns.jpg"
+const coupleImage = "/images/UeberUns.jpg"
 
 const fashionImage = "/images/Kleider.jpg"
 
@@ -344,7 +344,7 @@ export default function App() {
                     <h4>Bei uns in Basel</h4>
                     <p>
                       Nach Terminvereinbarung empfangen wir Sie gerne an der Erlenstrasse 49 in
-                      4058 Basel.
+                      4058 Basel – Montag bis Samstag zwischen 11.00 und 19.00 Uhr.
                     </p>
                   </div>
                 </article>
@@ -497,7 +497,11 @@ export default function App() {
                   <a href="mailto:senioren-homeservice@gmx.ch">Andere E-Mail-App</a>
                 </div>
               </div>
-              <small>Montag bis Freitag, 10.00–19.00 Uhr</small>
+              <small>
+                Telefonisch erreichbar: Montag bis Samstag, 11.00–19.00 Uhr
+                <br />
+                Besuch in Basel nach Terminvereinbarung, ebenfalls 11.00–19.00 Uhr
+              </small>
             </div>
           </div>
         </section>

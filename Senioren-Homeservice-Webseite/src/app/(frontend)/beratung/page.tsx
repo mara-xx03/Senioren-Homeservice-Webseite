@@ -58,7 +58,11 @@ export default function ConsultationPage() {
             <a className="mt-1 block font-serif text-3xl text-[#9d3d46]" href="tel:+41788701050">
               078 870 10 50
             </a>
-            <span className="text-sm text-[#69746e]">Montag bis Freitag, 10.00–19.00 Uhr</span>
+            <span className="text-sm text-[#69746e]">
+              Telefonisch erreichbar: Montag bis Samstag, 11.00–19.00 Uhr
+              <br />
+              Besuch in Basel nach Terminvereinbarung, ebenfalls 11.00–19.00 Uhr
+            </span>
           </div>
         </div>
         <ConsultationForm />
