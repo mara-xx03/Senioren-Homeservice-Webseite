@@ -125,7 +125,7 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
     <div className="min-h-screen bg-[#f6f1e8] text-[#26322c]">
       <div className="bg-[#263e33] text-white">
         <div className="mx-auto flex min-h-10 max-w-[1180px] items-center justify-center px-5 text-sm sm:justify-between">
-          <span className="hidden sm:inline">Kostenlose Lieferung ab CHF 80.–</span>
+          <span className="hidden sm:inline">Gratis Versand – ohne Mindestbestellwert</span>
           <a className="font-semibold" href="tel:+41788701050">
             Persönliche Beratung: 078 870 10 50
           </a>
@@ -457,7 +457,9 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
                   <span>Gesamtsumme</span>
                   <span>{formatPrice(total)}</span>
                 </div>
-                <p className="mt-1 text-xs text-[#69746e]">Versand wird vor Bestätigung geprüft.</p>
+                <p className="mt-1 text-xs text-[#69746e]">
+                  Inklusive Versand – wir liefern gratis, ohne Mindestbestellwert.
+                </p>
                 <button
                   type="button"
                   onClick={() => setCheckoutOpen(true)}
