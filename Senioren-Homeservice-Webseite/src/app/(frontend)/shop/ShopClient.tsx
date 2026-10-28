@@ -126,8 +126,8 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
       <div className="bg-[#263e33] text-white">
         <div className="mx-auto flex min-h-10 max-w-[1180px] items-center justify-center px-5 text-sm sm:justify-between">
           <span className="hidden sm:inline">Kostenlose Lieferung ab CHF 80.–</span>
-          <a className="font-semibold" href="tel:+41615541115">
-            Persönliche Beratung: 061 554 11 15
+          <a className="font-semibold" href="tel:+41788701050">
+            Persönliche Beratung: 078 870 10 50
           </a>
         </div>
       </div>
@@ -197,11 +197,10 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
                   key={key}
                   type="button"
                   onClick={() => setCategory(key)}
-                  className={`min-h-11 rounded-full border px-5 text-sm font-semibold transition ${
-                    category === key
+                  className={`min-h-11 rounded-full border px-5 text-sm font-semibold transition ${category === key
                       ? 'border-[#263e33] bg-[#263e33] text-white'
                       : 'border-[#26322c]/20 bg-transparent hover:border-[#26322c]'
-                  }`}
+                    }`}
                 >
                   {categoryLabels[key]}
                 </button>
@@ -475,7 +474,7 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
       <footer className="bg-[#1e2b25] text-white">
         <div className="mx-auto flex max-w-[1180px] flex-col justify-between gap-5 px-5 py-8 text-sm text-white/65 sm:flex-row">
           <span>© 2025 Senioren Homeservice GmbH</span>
-          <span>senioren-homeservice@gmx.ch · 061 554 11 15</span>
+          <span>senioren-homeservice@gmx.ch · 078 870 10 50</span>
         </div>
       </footer>
     </div>

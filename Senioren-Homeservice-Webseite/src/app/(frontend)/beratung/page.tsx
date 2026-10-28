@@ -14,8 +14,8 @@ export default function ConsultationPage() {
       <div className="bg-[#263e33] text-white">
         <div className="mx-auto flex min-h-10 max-w-[1180px] items-center justify-center px-5 text-sm sm:justify-between">
           <span className="hidden sm:inline">Persönlich. Bequem. Bei Ihnen.</span>
-          <a className="font-semibold" href="tel:+41615541115">
-            061 554 11 15
+          <a className="font-semibold" href="tel:+41788701050">
+            078 870 10 50
           </a>
         </div>
       </div>
@@ -55,8 +55,8 @@ export default function ConsultationPage() {
           </p>
           <div className="mt-9 border-l-2 border-[#9d3d46] pl-5">
             <strong className="block">Lieber direkt sprechen?</strong>
-            <a className="mt-1 block font-serif text-3xl text-[#9d3d46]" href="tel:+41615541115">
-              061 554 11 15
+            <a className="mt-1 block font-serif text-3xl text-[#9d3d46]" href="tel:+41788701050">
+              078 870 10 50
             </a>
             <span className="text-sm text-[#69746e]">Montag bis Freitag, 10.00–19.00 Uhr</span>
           </div>

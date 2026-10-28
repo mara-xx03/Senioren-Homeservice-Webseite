@@ -129,8 +129,8 @@ export default function App() {
       <div className="topline">
         <div className="page-width topline-inner">
           <p>Mode, die zu Ihnen kommt – in der ganzen Schweiz</p>
-          <a href="tel:+41615541115">
-            <PhoneIcon /> 061 554 11 15
+          <a href="tel:+41788701050">
+            <PhoneIcon /> 078 870 10 50
           </a>
         </div>
       </div>
@@ -473,9 +473,9 @@ export default function App() {
               </p>
             </div>
             <div className="contact-actions">
-              <a className="phone-link" href="tel:+41615541115">
+              <a className="phone-link" href="tel:+41788701050">
                 <span>Telefon</span>
-                061 554 11 15
+                078 870 10 50
               </a>
               <div className="email-options">
                 <span>E-Mail schreiben mit</span>

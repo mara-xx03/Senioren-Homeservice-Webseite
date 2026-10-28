@@ -63,10 +63,10 @@ export default function ConsultationForm() {
                 Rufen Sie uns doch gerne an – Montag bis Samstag zwischen 10.00 und 19.00 Uhr.
               </p>
               <a
-                href="tel:+41615541115"
+                href="tel:+41788701050"
                 className="mt-4 inline-flex min-h-12 items-center justify-center rounded-sm bg-[#9d3d46] px-6 font-serif text-2xl text-white"
               >
-                061 554 11 15
+                078 870 10 50
               </a>
             </div>
             <a
@@ -111,8 +111,8 @@ export default function ConsultationForm() {
             </div>
             <p className="mt-5 text-sm text-[#69746e]">
               Lieber telefonisch? Rufen Sie uns an:{' '}
-              <a href="tel:+41615541115" className="font-semibold text-[#9d3d46]">
-                061 554 11 15
+              <a href="tel:+41788701050" className="font-semibold text-[#9d3d46]">
+                078 870 10 50
               </a>{' '}
               – Montag bis Samstag, 10.00–19.00 Uhr
             </p>
