@@ -494,6 +494,25 @@ export default function App() {
               </small>
             </div>
           </div>
+
+          <div className="page-width map-location">
+            <h3>So finden Sie uns</h3>
+            <div className="map-embed">
+              <iframe
+                title="Karte mit unserem Standort an der Erlenstrasse 49 in 4058 Basel"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=7.5954%2C47.5658%2C7.6074%2C47.5718&layer=mapnik&marker=47.5688391%2C7.6014090"
+                loading="lazy"
+              />
+            </div>
+            <a
+              className="map-route-link"
+              href="https://www.google.com/maps/dir/?api=1&destination=Erlenstrasse+49%2C+4058+Basel"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Route planen <ArrowIcon />
+            </a>
+          </div>
         </section>
       </main>
 

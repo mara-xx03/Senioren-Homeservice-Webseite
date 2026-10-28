@@ -910,6 +910,47 @@
   padding: 0 0 110px;
 }
 
+.map-location {
+  margin-top: 70px;
+}
+
+.map-location h3 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.map-embed {
+  height: 420px;
+  border: 1px solid var(--line);
+}
+
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-route-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  margin-top: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.map-route-link svg {
+  width: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
 .contact-card {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -1337,6 +1378,14 @@ footer .logo small {
   .category-image,
   .family-image {
     height: 450px;
+  }
+
+  .map-location {
+    margin-top: 45px;
+  }
+
+  .map-embed {
+    height: 300px;
   }
 
   .map-wrap {
