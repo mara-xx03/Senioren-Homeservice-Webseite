@@ -33,6 +33,15 @@ function CheckIcon() {
   )
 }
 
+function PinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.6" />
+    </svg>
+  )
+}
+
 // x/y sind Koordinaten im viewBox-System der Schweizer Karte weiter unten.
 const serviceRegions = [
   { name: "Basel-Stadt", x: 221.2, y: 78.6 },
@@ -210,10 +219,16 @@ export default function App() {
                 </Link>
               </div>
               <div className="hero-visit">
-                <strong>Besuchen Sie uns in Basel!</strong>
-                <a className="button outline" href="#standort">
-                  Standort auf der Karte <ArrowIcon />
-                </a>
+                <span className="hero-visit-icon" aria-hidden="true">
+                  <PinIcon />
+                </span>
+                <div className="hero-visit-text">
+                  <strong>Besuchen Sie uns in Basel!</strong>
+                  <span>Erlenstrasse 49 · nach Terminvereinbarung</span>
+                  <a className="hero-visit-link" href="#standort">
+                    Auf der Karte zeigen <ArrowIcon />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
