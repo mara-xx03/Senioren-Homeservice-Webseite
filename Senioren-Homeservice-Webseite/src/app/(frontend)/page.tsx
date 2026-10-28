@@ -454,10 +454,6 @@ export default function App() {
                 Selbstkostenpreis und die Nachbestellung Ihrer Lieblingsstücke
                 gehören für uns dazu.
               </p>
-              <div className="signature">
-                <strong>Spichiger</strong>
-                <span>Ihre persönliche Ansprechpartnerin</span>
-              </div>
             </div>
           </div>
         </section>
