@@ -102,7 +102,7 @@ const categories = [
   {
     number: "02",
     title: "Herrenmode",
-    text: "Klassische Hemden, weiche Strickpullover und komfortable Hosen mit elastischem Bund für Alltag und besondere Anlässe.",
+    text: "Klassische Hemden, weiche Strickpullover sowie Schlupfhosen und komfortable Hosen mit elastischem Bund für Alltag und besondere Anlässe.",
   },
   {
     number: "03",
