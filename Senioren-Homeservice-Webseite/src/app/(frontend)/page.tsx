@@ -193,8 +193,8 @@ export default function App() {
               </h1>
               <p className="hero-copy">
                 Wir bringen ausgewählte Mode und bequeme Schuhe direkt zu Ihnen
-                nach Hause im Umkreis Basel, in Ihre Residenz oder an Ihren
-                Seniorentreff.
+                nach Hause im Umkreis Basel, in Ihre Residenz, Ihr Wohnheim oder
+                an Ihren Seniorentreff.
               </p>
               <div className="hero-actions">
                 <a
