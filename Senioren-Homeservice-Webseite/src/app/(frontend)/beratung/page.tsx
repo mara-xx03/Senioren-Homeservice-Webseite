@@ -64,6 +64,10 @@ export default function ConsultationPage() {
               Besuch in Basel nach Terminvereinbarung, ebenfalls 11.00–19.00 Uhr
             </span>
           </div>
+          <p className="mt-6 text-sm leading-relaxed text-[#69746e]">
+            Hausbesuche machen wir im Umkreis Basel ab einem Auftragswert von CHF 400.–.
+            Verkaufstage in Alters- und Pflegeheimen sind auch ausserhalb möglich.
+          </p>
         </div>
         <ConsultationForm />
       </main>

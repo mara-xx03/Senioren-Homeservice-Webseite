@@ -161,6 +161,12 @@ export default function ConsultationForm() {
             <option value="other">Andere Frage</option>
           </select>
         </label>
+        {topic === 'home-service' && (
+          <p className="sm:col-span-2 border border-[#9d3d46]/20 bg-[#9d3d46]/5 p-4 text-sm leading-relaxed text-[#657069]">
+            Hausbesuche machen wir im Umkreis Basel ab einem Auftragswert von CHF 400.–.
+            Verkaufstage in Alters- und Pflegeheimen sind auch ausserhalb möglich.
+          </p>
+        )}
         {topic === 'institution' && (
           <div className="sm:col-span-2 grid gap-5 border border-[#9d3d46]/20 bg-[#9d3d46]/5 p-5 sm:grid-cols-2">
             <div className="sm:col-span-2">

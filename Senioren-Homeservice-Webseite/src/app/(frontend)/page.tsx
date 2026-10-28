@@ -193,7 +193,8 @@ export default function App() {
               </h1>
               <p className="hero-copy">
                 Wir bringen ausgewählte Mode und bequeme Schuhe direkt zu Ihnen
-                nach Hause, in Ihre Residenz oder an Ihren Seniorentreff.
+                nach Hause im Umkreis Basel, in Ihre Residenz oder an Ihren
+                Seniorentreff.
               </p>
               <div className="hero-actions">
                 <a
@@ -317,7 +318,7 @@ export default function App() {
                 <h3>Wir kommen zu Ihnen</h3>
                 <p>
                   Wir bringen eine sorgfältig gewählte Auswahl zu Ihnen nach
-                  Hause oder in Ihre Einrichtung.
+                  Hause im Umkreis Basel oder in Ihre Einrichtung.
                 </p>
               </article>
               <article>
@@ -360,8 +361,8 @@ export default function App() {
                   <div>
                     <h4>Persönlich bei Ihnen zuhause</h4>
                     <p>
-                      Auf Wunsch kommen wir zu Ihnen und beraten Sie in Ihrer vertrauten
-                      Umgebung.
+                      Hausbesuche machen wir im Umkreis Basel ab einem Auftragswert von
+                      CHF 400.–. Wir beraten Sie in Ihrer vertrauten Umgebung.
                     </p>
                   </div>
                 </article>
@@ -392,11 +393,12 @@ export default function App() {
               </span>
             </div>
             <div className="service-area-content">
-              <p className="eyebrow">Persönlich in Ihrer Nähe</p>
-              <h2>Wir kommen zu Ihnen.</h2>
+              <p className="eyebrow">Verkaufstage in Heimen</p>
+              <h2>Wir kommen in Ihre Einrichtung.</h2>
               <p className="service-area-lead">
-                Unser mobiler Homeservice ist für Seniorinnen, Senioren und Institutionen in
-                mehreren Regionen unterwegs.
+                Für Verkaufstage in Alters- und Pflegeheimen sind wir in diesen Regionen
+                unterwegs. Persönliche Hausbesuche machen wir im Umkreis Basel ab einem
+                Auftragswert von CHF 400.–.
               </p>
               <div className="region-list">
                 {serviceRegions.map((region, index) => (
@@ -407,11 +409,11 @@ export default function App() {
                 ))}
               </div>
               <p className="region-note">
-                Ihr Ort ist nicht dabei? Fragen Sie uns gerne an – weitere Regionen sind nach
-                Absprache möglich.
+                Ihr Heim liegt nicht in diesen Regionen? Fragen Sie uns gerne an – weitere
+                Regionen sind nach Absprache möglich.
               </p>
               <Link className="button primary" href="/beratung">
-                Besuch anfragen <ArrowIcon />
+                Verkaufstag anfragen <ArrowIcon />
               </Link>
             </div>
           </div>
@@ -455,7 +457,8 @@ export default function App() {
               <h2>Gönnen Sie sich entspanntes Einkaufen.</h2>
               <p>
                 Besuchen Sie uns nach Terminvereinbarung an der Erlenstrasse 49 in Basel – oder
-                wir kommen persönlich zu Ihnen.
+                wir kommen zu Ihnen nach Hause im Umkreis Basel, ab einem Auftragswert von
+                CHF 400.–.
               </p>
             </div>
             <div className="contact-actions">
