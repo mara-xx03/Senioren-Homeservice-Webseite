@@ -214,9 +214,6 @@ export default function App() {
                 >
                   Zum Online-Shop <ArrowIcon />
                 </a>
-                <Link className="text-link" href="/beratung">
-                  Beratung anfragen
-                </Link>
               </div>
               <div className="hero-visit">
                 <span className="hero-visit-icon" aria-hidden="true">
