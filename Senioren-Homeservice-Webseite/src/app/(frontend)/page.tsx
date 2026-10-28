@@ -435,18 +435,17 @@ export default function App() {
             </div>
             <div className="family-content">
               <p className="eyebrow">Mit Herz geführt</p>
-              <h2>Ein Familienbetrieb, bei dem der Mensch zählt.</h2>
+              <h2>Ein Familienbetrieb seit 2011, bei dem der Mensch zählt.</h2>
               <p className="large-copy">
                 Wir glauben: Modebewusstsein kennt kein Alter. Darum verbinden
                 wir persönliche Nähe mit sorgfältiger Auswahl und echter Freude
                 an guter Beratung.
               </p>
               <p>
-                Seit vielen Jahren besuchen wir Seniorinnen und Senioren in
-                ihrem vertrauten Umfeld. Wir nehmen uns Zeit, hören zu und
-                helfen bei der Anprobe. Auch ein Änderungsservice zum
-                Selbstkostenpreis und die Nachbestellung Ihrer Lieblingsstücke
-                gehören für uns dazu.
+                Seit 2011 besuchen wir Seniorinnen und Senioren in ihrem
+                vertrauten Umfeld. Wir nehmen uns Zeit, hören zu und helfen bei
+                der Anprobe. Auch ein Änderungsservice zum Selbstkostenpreis und
+                die Nachbestellung Ihrer Lieblingsstücke gehören für uns dazu.
               </p>
             </div>
           </div>
