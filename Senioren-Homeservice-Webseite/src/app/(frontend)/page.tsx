@@ -209,6 +209,12 @@ export default function App() {
                   Beratung anfragen
                 </Link>
               </div>
+              <div className="hero-visit">
+                <strong>Besuchen Sie uns in Basel!</strong>
+                <a className="button outline" href="#standort">
+                  Standort auf der Karte <ArrowIcon />
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -495,7 +501,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="page-width map-location">
+          <div className="page-width map-location" id="standort">
             <h3>So finden Sie uns</h3>
             <div className="map-embed">
               <iframe
