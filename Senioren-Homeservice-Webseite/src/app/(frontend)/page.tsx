@@ -251,7 +251,7 @@ export default function App() {
                   alt="Auswahl an Kleidern aus unserem Sortiment"
                 />
                 <div className="image-note">
-                  <strong>Über 6’000</strong>
+                  <strong>Über 1’200</strong>
                   <span>ausgewählte Teile</span>
                 </div>
               </div>
