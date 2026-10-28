@@ -112,7 +112,7 @@ const categories = [
   {
     number: "04",
     title: "Diabetikersocken & Pflegewäsche",
-    text: "Druckfreie Diabetikersocken ohne einschneidenden Gummibund sowie funktionale Pflegewäsche für hohen Komfort im Alltag.",
+    text: "Druckfreie Diabetikersocken ohne einschneidenden Gummibund sowie Pflegewäsche aus 100 % Baumwolle – bis 95 Grad waschbar und damit besonders hygienisch.",
   },
 ]
 
