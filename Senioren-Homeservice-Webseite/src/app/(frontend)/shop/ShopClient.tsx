@@ -198,8 +198,8 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
                   type="button"
                   onClick={() => setCategory(key)}
                   className={`min-h-11 rounded-full border px-5 text-sm font-semibold transition ${category === key
-                      ? 'border-[#263e33] bg-[#263e33] text-white'
-                      : 'border-[#26322c]/20 bg-transparent hover:border-[#26322c]'
+                    ? 'border-[#263e33] bg-[#263e33] text-white'
+                    : 'border-[#26322c]/20 bg-transparent hover:border-[#26322c]'
                     }`}
                 >
                   {categoryLabels[key]}
@@ -474,7 +474,12 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
       <footer className="bg-[#1e2b25] text-white">
         <div className="mx-auto flex max-w-[1180px] flex-col justify-between gap-5 px-5 py-8 text-sm text-white/65 sm:flex-row">
           <span>© 2025 Senioren Homeservice GmbH</span>
-          <span>senioren-homeservice@gmx.ch · 078 870 10 50</span>
+          <span>
+            senioren-homeservice@gmx.ch · 078 870 10 50 ·{' '}
+            <a className="underline-offset-4 hover:underline" href="/impressum">
+              Impressum
+            </a>
+          </span>
         </div>
       </footer>
     </div>

@@ -526,6 +526,7 @@ export default function App() {
             <a href="#angebot">Sortiment</a>
             <a href="#homeservice">Homeservice</a>
             <a href="#ueber-uns">Über uns</a>
+            <Link href="/impressum">Impressum</Link>
           </div>
         </div>
         <div className="page-width footer-bottom">
