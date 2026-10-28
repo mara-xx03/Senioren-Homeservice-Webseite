@@ -219,6 +219,7 @@ export default function App() {
               "Persönliche Beratung",
               "Anprobe vor Ort",
               "Kauf auf Rechnung",
+              "Gratis Versand",
             ].map((item) => (
               <div className="trust-item" key={item}>
                 <span>
