@@ -342,7 +342,8 @@ export default function App() {
                     <h4>Bei uns in Basel</h4>
                     <p>
                       Nach Terminvereinbarung empfangen wir Sie gerne an der Erlenstrasse 49 in
-                      4058 Basel – Montag bis Samstag zwischen 11.00 und 19.00 Uhr.
+                      4058 Basel – Montag bis Samstag zwischen 11.00 und 19.00 Uhr. Unsere Räume
+                      sind rollstuhlgerecht.
                     </p>
                   </div>
                 </article>
@@ -456,9 +457,9 @@ export default function App() {
               <p className="eyebrow light">Wir freuen uns auf Sie</p>
               <h2>Gönnen Sie sich entspanntes Einkaufen.</h2>
               <p>
-                Besuchen Sie uns nach Terminvereinbarung an der Erlenstrasse 49 in Basel – oder
-                wir kommen zu Ihnen nach Hause im Umkreis Basel, ab einem Auftragswert von
-                CHF 400.–.
+                Besuchen Sie uns nach Terminvereinbarung an der Erlenstrasse 49 in Basel – unsere
+                Räume sind rollstuhlgerecht. Oder wir kommen zu Ihnen nach Hause im Umkreis Basel,
+                ab einem Auftragswert von CHF 400.–.
               </p>
             </div>
             <div className="contact-actions">
