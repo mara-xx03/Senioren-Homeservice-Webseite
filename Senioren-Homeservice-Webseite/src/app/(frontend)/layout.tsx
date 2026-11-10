@@ -1,6 +1,7 @@
 import React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
+import { Analytics } from "@vercel/analytics/next"
 import { BodyCustomCode, renderHeadCustomCode } from "@/lib/make-custom-code"
 import {
   makeSiteSettings,
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: socialImage
     ? {
-        card: "summary_large_image",
-        images: [socialImage],
-      }
+      card: "summary_large_image",
+      images: [socialImage],
+    }
     : undefined,
 }
 
@@ -85,6 +86,7 @@ gtag('config', ${JSON.stringify(googleAnalyticsId)});
           </>
         )}
         <BodyCustomCode html={customScripts?.bodyEnd} />
+        <Analytics />
       </body>
     </html>
   )

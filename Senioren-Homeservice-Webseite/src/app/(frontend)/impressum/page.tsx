@@ -132,6 +132,11 @@ export default function ImpressumPage() {
                         </a>
                         .
                     </p>
+                    <p className="mt-4 text-lg leading-relaxed text-[#5f6b64]">
+                        Zur Verbesserung unserer Website erfassen wir mit Vercel Web Analytics anonyme
+                        Nutzungsstatistiken, etwa die Anzahl der Seitenaufrufe. Dabei werden keine Cookies
+                        gesetzt und keine Daten erhoben, die Rückschlüsse auf Ihre Person zulassen.
+                    </p>
                 </section>
 
                 <div className="mt-12 border-t border-[#26322c]/15 pt-8">
