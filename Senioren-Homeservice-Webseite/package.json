@@ -20,6 +20,7 @@
     "@payloadcms/richtext-lexical": "4.0.0-beta.3",
     "@payloadcms/translations": "4.0.0-beta.3",
     "@payloadcms/ui": "4.0.0-beta.3",
+    "@vercel/analytics": "^2.0.1",
     "graphql": "^16.8.1",
     "html-react-parser": "^5.2.10",
     "monaco-editor": "0.55.1",
