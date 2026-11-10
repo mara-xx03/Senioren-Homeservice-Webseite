@@ -1,4 +1,6 @@
-'use client'
+"use client"
+
+// x/y sind Koordinaten im viewBox-System der Schweizer Karte weiter unten.
 
 import Link from "next/link"
 import { useState } from "react"
@@ -41,8 +43,6 @@ function PinIcon() {
     </svg>
   )
 }
-
-// x/y sind Koordinaten im viewBox-System der Schweizer Karte weiter unten.
 const serviceRegions = [
   { name: "Basel-Stadt", x: 221.2, y: 78.6 },
   { name: "Basel Land", x: 234.6, y: 88.8 },
@@ -67,7 +67,8 @@ function ServiceAreaMap() {
     >
       <title id="swiss-map-title">Unsere Einsatzgebiete in der Schweiz</title>
       <desc id="swiss-map-description">
-        Markiert sind {names.slice(0, -1).join(", ")} und {names[names.length - 1]}.
+        Markiert sind {names.slice(0, -1).join(", ")} und{" "}
+        {names[names.length - 1]}.
       </desc>
       <path
         className="swiss-map-shape"
@@ -288,13 +289,16 @@ export default function App() {
             <div className="comfort-promise">
               <div>
                 <p>Für individuelle Bedürfnisse</p>
-                <h3>Bequem gekleidet – auch bei körperlichen Einschränkungen.</h3>
+                <h3>
+                  Bequem gekleidet – auch bei körperlichen Einschränkungen.
+                </h3>
               </div>
               <div>
                 <p>
-                  Jeder Mensch hat andere Bedürfnisse. Deshalb achten wir darauf, dass Kleidung
-                  gut sitzt, leicht an- und auszuziehen ist und genügend Bewegungsfreiheit bietet.
-                  Gemeinsam finden wir Lösungen, die zu Ihrer persönlichen Situation passen und
+                  Jeder Mensch hat andere Bedürfnisse. Deshalb achten wir
+                  darauf, dass Kleidung gut sitzt, leicht an- und auszuziehen
+                  ist und genügend Bewegungsfreiheit bietet. Gemeinsam finden
+                  wir Lösungen, die zu Ihrer persönlichen Situation passen und
                   den ganzen Tag angenehm bleiben.
                 </p>
                 <ul>
@@ -360,9 +364,10 @@ export default function App() {
                   <div>
                     <h4>Bei uns in Basel</h4>
                     <p>
-                      Nach Terminvereinbarung empfangen wir Sie gerne an der Erlenstrasse 49 in
-                      4058 Basel – Montag bis Samstag zwischen 11.00 und 19.00 Uhr. Unsere Räume
-                      sind rollstuhlgerecht.
+                      Nach Terminvereinbarung empfangen wir Sie gerne an der
+                      Erlenstrasse 49 in 4058 Basel – Montag bis Samstag
+                      zwischen 11.00 und 19.00 Uhr. Unsere Räume sind
+                      rollstuhlgerecht.
                     </p>
                   </div>
                 </article>
@@ -371,8 +376,8 @@ export default function App() {
                   <div>
                     <h4>Bei Ihnen im Heim</h4>
                     <p>
-                      Bei unseren Verkaufstagen bringen wir die Mode direkt in Ihre
-                      Seniorenresidenz oder Ihr Pflegeheim.
+                      Bei unseren Verkaufstagen bringen wir die Mode direkt in
+                      Ihre Seniorenresidenz oder Ihr Pflegeheim.
                     </p>
                   </div>
                 </article>
@@ -381,8 +386,9 @@ export default function App() {
                   <div>
                     <h4>Persönlich bei Ihnen zuhause</h4>
                     <p>
-                      Hausbesuche machen wir im Umkreis Basel ab einem Auftragswert von
-                      CHF 400.–. Wir beraten Sie in Ihrer vertrauten Umgebung.
+                      Hausbesuche machen wir im Umkreis Basel ab einem
+                      Auftragswert von CHF 400.–. Wir beraten Sie in Ihrer
+                      vertrauten Umgebung.
                     </p>
                   </div>
                 </article>
@@ -394,8 +400,9 @@ export default function App() {
             <div className="service-note">
               <span>Für Heimleitungen</span>
               <p>
-                Verkaufstage und kleine Modenschauen können ausschliesslich durch Leitungen oder
-                autorisierte Vertretungen von Alters- und Pflegeheimen angefragt werden.
+                Verkaufstage und kleine Modenschauen können ausschliesslich
+                durch Leitungen oder autorisierte Vertretungen von Alters- und
+                Pflegeheimen angefragt werden.
               </p>
               <Link href="/beratung">
                 Als Heimleitung anfragen <ArrowIcon />
@@ -416,9 +423,9 @@ export default function App() {
               <p className="eyebrow">Verkaufstage in Heimen</p>
               <h2>Wir kommen in Ihre Einrichtung.</h2>
               <p className="service-area-lead">
-                Für Verkaufstage in Alters- und Pflegeheimen sind wir in diesen Regionen
-                unterwegs. Persönliche Hausbesuche machen wir im Umkreis Basel ab einem
-                Auftragswert von CHF 400.–.
+                Für Verkaufstage in Alters- und Pflegeheimen sind wir in diesen
+                Regionen unterwegs. Persönliche Hausbesuche machen wir im
+                Umkreis Basel ab einem Auftragswert von CHF 400.–.
               </p>
               <div className="region-list">
                 {serviceRegions.map((region, index) => (
@@ -429,8 +436,8 @@ export default function App() {
                 ))}
               </div>
               <p className="region-note">
-                Ihr Heim liegt nicht in diesen Regionen? Fragen Sie uns gerne an – weitere
-                Regionen sind nach Absprache möglich.
+                Ihr Heim liegt nicht in diesen Regionen? Fragen Sie uns gerne an
+                – weitere Regionen sind nach Absprache möglich.
               </p>
               <Link className="button primary" href="/beratung">
                 Verkaufstag anfragen <ArrowIcon />
@@ -442,10 +449,7 @@ export default function App() {
         <section className="section family" id="ueber-uns">
           <div className="page-width family-grid">
             <div className="family-image">
-              <img
-                src={coupleImage}
-                alt="Das Team des Senioren Homeservice"
-              />
+              <img src={coupleImage} alt="Das Team des Senioren Homeservice" />
               <span className="swiss-badge" aria-label="Schweizer Unternehmen">
                 <i />
                 Aus der Schweiz
@@ -475,9 +479,10 @@ export default function App() {
               <p className="eyebrow light">Wir freuen uns auf Sie</p>
               <h2>Gönnen Sie sich entspanntes Einkaufen.</h2>
               <p>
-                Besuchen Sie uns nach Terminvereinbarung an der Erlenstrasse 49 in Basel – unsere
-                Räume sind rollstuhlgerecht. Oder wir kommen zu Ihnen nach Hause im Umkreis Basel,
-                ab einem Auftragswert von CHF 400.–.
+                Besuchen Sie uns nach Terminvereinbarung an der Erlenstrasse 49
+                in Basel – unsere Räume sind rollstuhlgerecht. Oder wir kommen
+                zu Ihnen nach Hause im Umkreis Basel, ab einem Auftragswert von
+                CHF 400.–.
               </p>
             </div>
             <div className="contact-actions">
@@ -502,13 +507,16 @@ export default function App() {
                   >
                     Outlook
                   </a>
-                  <a href="mailto:senioren-homeservice@gmx.ch">Andere E-Mail-App</a>
+                  <a href="mailto:senioren-homeservice@gmx.ch">
+                    Andere E-Mail-App
+                  </a>
                 </div>
               </div>
               <small>
                 Telefonisch erreichbar: Montag bis Samstag, 11.00–19.00 Uhr
                 <br />
-                Besuch in Basel nach Terminvereinbarung, ebenfalls 11.00–19.00 Uhr
+                Besuch in Basel nach Terminvereinbarung, ebenfalls 11.00–19.00
+                Uhr
               </small>
             </div>
           </div>
@@ -557,7 +565,9 @@ export default function App() {
             <h3>Erreichbar</h3>
             <a href="tel:+41615541115">061 554 11 15</a>
             <a href="tel:+41788701050">078 870 10 50</a>
-            <a href="mailto:senioren-homeservice@gmx.ch">senioren-homeservice@gmx.ch</a>
+            <a href="mailto:senioren-homeservice@gmx.ch">
+              senioren-homeservice@gmx.ch
+            </a>
           </div>
           <div>
             <h3>Informationen</h3>
