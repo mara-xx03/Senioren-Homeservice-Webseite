@@ -3,5 +3,5 @@ export function makeSiteSettings() {
 }
 
 export function sanitizeHtmlAttribute(val: string) {
-  return val || ''
+  return val || ""
 }

@@ -1,5 +1,5 @@
-import { withPayload } from '@payloadcms/next/withPayload'
-import type { NextConfig } from 'next'
+import { withPayload } from "@payloadcms/next/withPayload"
+import type { NextConfig } from "next"
 
 const makePublicPreviewOrigin = (() => {
   const publicURL = process.env.FIGMA_PUBLIC_URL
@@ -14,10 +14,10 @@ const makePublicPreviewOrigin = (() => {
 })()
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
+  output: "standalone",
   images: {
-    loader: 'custom',
-    loaderFile: './figma-image-loader.ts',
+    loader: "custom",
+    loaderFile: "./figma-image-loader.ts",
   },
   // Don't block publishing or preview deploys on errors if the emitted JS is valid
   typescript: {
@@ -43,7 +43,8 @@ const nextConfig: NextConfig = {
     },
   },
   env: {
-    NEXT_PUBLIC_SITE_URL: process.env.FIGMA_PUBLIC_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_SITE_URL:
+      process.env.FIGMA_PUBLIC_URL || "http://localhost:3000",
     // NOTE: Do not add FIGMA_OAUTH_CLIENT_SECRET, FIGMA_CONTENT_API_ACCESS_KEY,
     // or any other credential here. Values placed in `env` are inlined into
     // the JavaScript bundle by Next.js at build time and become readable by
@@ -53,7 +54,8 @@ const nextConfig: NextConfig = {
     // public, non-secret values that explicitly need to be available in
     // browser code should be added - and those should use the `NEXT_PUBLIC_*`
     // naming convention.
-    FIGMA_CONTENT_API_CONTENT_SYSTEM_ID: process.env.FIGMA_CONTENT_API_CONTENT_SYSTEM_ID,
+    FIGMA_CONTENT_API_CONTENT_SYSTEM_ID:
+      process.env.FIGMA_CONTENT_API_CONTENT_SYSTEM_ID,
     FIGMA_CONTENT_API_URL: process.env.FIGMA_CONTENT_API_URL,
     FIGMA_OAUTH_CLIENT_ID: process.env.FIGMA_OAUTH_CLIENT_ID,
   },

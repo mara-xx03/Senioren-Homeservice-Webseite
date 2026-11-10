@@ -1,3 +1,3 @@
-'use client'
+"use client"
 
-export { figmaNextImageLoader as default } from '@payloadcms/figma/next-image-loader'
+export { figmaNextImageLoader as default } from "@payloadcms/figma/next-image-loader"

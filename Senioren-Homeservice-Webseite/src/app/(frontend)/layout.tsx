@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: socialImage
     ? {
-      card: "summary_large_image",
-      images: [socialImage],
-    }
+        card: "summary_large_image",
+        images: [socialImage],
+      }
     : undefined,
 }
 

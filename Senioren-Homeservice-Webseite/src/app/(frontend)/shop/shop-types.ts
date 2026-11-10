@@ -2,7 +2,7 @@ export type ShopProduct = {
   id: string
   name: string
   sku: string
-  category: 'damen' | 'herren' | 'schuhe'
+  category: "damen" | "herren" | "schuhe"
   shortDescription: string
   price: number
   image: {
@@ -10,7 +10,7 @@ export type ShopProduct = {
     alt: string
   } | null
   sizes: string[]
-  stockStatus: 'in-stock' | 'low' | 'out'
+  stockStatus: "in-stock" | "low" | "out"
   featured: boolean
 }
 
